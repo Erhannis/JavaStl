@@ -13,6 +13,16 @@ import com.erhannis.mathnstuff.MeMath;
  */
 public class Stl {
   /**
+   * Convenience method for {@link #pointsToStl(double[][], java.lang.String)}
+   * @param points
+   * @return 
+   * @see #pointsToStl(double[][], java.lang.String) 
+   */
+  public static String pointsToStl(double[][] points) {
+    return pointsToStl(points, "pointlist");
+  }
+    
+  /**
    * Organized like points[3N][3].
    * Points are grouped in triangles of three.
    * So like, points[0] points[1] points[2] form the first triangle,
@@ -21,6 +31,7 @@ public class Stl {
    * Look at 3 points such that 0-1-2 moves counterclockwise.  The normal shall
    * be calculated such that it comes out of the plane towards you.
    * @param points
+   * @param name
    * @return 
    */
   public static String pointsToStl(double[][] points, String name) {
