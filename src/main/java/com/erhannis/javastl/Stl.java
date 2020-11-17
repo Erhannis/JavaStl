@@ -42,7 +42,7 @@ public class Stl {
       double[] b = points[i+1];
       double[] c = points[i+2];
       
-      double[] normal = MeMath.crossProduct3d(MeMath.vectorSubtract(c,b), MeMath.vectorSubtract(a,b));
+      double[] normal = MeMath.vectorNormalizeIP(MeMath.crossProduct3d(MeMath.vectorSubtract(c,b), MeMath.vectorSubtract(a,b)));
       
       sb.append("facet normal "+normal[0]+" "+normal[1]+" "+normal[2]+"\n");
       sb.append("    outer loop\n");
